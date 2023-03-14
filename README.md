@@ -11,7 +11,7 @@ Hi,
 
 In this project called MovieDB, I did CRUD operations on the web page using MySql database. In this project, I used technologies such as JPA Hibernate, CDI, Tomcat Servlet, JSF, Boostrap, PrimeFaces. I also used templates in xhtml pages. You can start the project from the index.xhtml page.
 
-Actor Page;
+  <b>Actor Page;</b>
 ![actor](https://user-images.githubusercontent.com/121702279/224959414-a6fb03e3-9876-4a1f-84c1-d04b44189ec7.png)
 
 Category Page;
