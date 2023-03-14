@@ -7,7 +7,7 @@ Merhaba,
 MovieDB adındaki bu projemde MySql veri tabanını kullanarak Web sayfası üzerinde CRUD işlemleri yaptım. Bu projede JPA Hibernate, CDI , Tomcat Servlet, JSF, Boostrap, PrimeFaces gibi teknolojiler kullandım. Ayrıca xhtml sayfalarında da template kullandım. Projeyi index.xhtml sayfasından başlatabilirsiniz.
 
 <b>[En]</b>
-Hi,
+Hi,</br>
 
 In this project called MovieDB, I did CRUD operations on the web page using MySql database. In this project, I used technologies such as JPA Hibernate, CDI, Tomcat Servlet, JSF, Boostrap, PrimeFaces. I also used templates in xhtml pages. You can start the project from the index.xhtml page.
 
