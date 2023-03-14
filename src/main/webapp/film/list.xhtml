@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/admin.xhtml">
+
+	<ui:define name="content">
+		<h:form>
+			<h:commandButton styleClass="btn btn-outline-primary" action="create"
+				value="Create New Film" />
+			<h:dataTable styleClass="table table-hover table-striped mt-3"
+				paginator="true" rows="15"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				value="#{filmBean.read}" var="c">
+				<h:column>
+					<f:facet name="header">ID</f:facet>
+					#{c.filmId}
+			</h:column>
+				<h:column>
+					<f:facet name="header">TITLE</f:facet>
+					#{c.title}
+			</h:column>
+				<h:column>
+					<f:facet name="header">DESCRIPTİON</f:facet>
+					#{c.description}
+			</h:column>
+				<h:column>
+					<f:facet name="header">RELEASED</f:facet>
+					#{c.releaseYear}
+			</h:column>
+				<h:column>
+					<f:facet name="header">LANGUAGE ID</f:facet>
+					#{languageBean.getById(c.languageId).name}
+			</h:column>
+				<h:column>
+					<f:facet name="header">LENGTH</f:facet>
+					#{c.length}
+			</h:column>
+				<h:column>
+					<f:facet name="header">LAST UPDATE</f:facet>
+					#{c.lastUpdate}
+			</h:column>
+				<h:column>
+					<f:facet name="header">ADMINISTRATION</f:facet>
+					<h:commandButton style="margin-bottom:3px"
+						styleClass="btn btn-warning" action="#{filmBean.updateForm(c)}"
+						value="update" />
+					<h:commandButton styleClass="btn btn-danger"
+						action="#{filmBean.delete(c)}" value="delete" />
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+
+
+

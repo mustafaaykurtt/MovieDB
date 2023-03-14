@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/admin.xhtml">
+
+	<ui:define name="content">
+		<h:form>
+			<div class="mb-3">
+				<label for="exampleInputPassword1" class="form-label">Film
+					Title</label>
+				<h:inputText styleClass="form-control"
+					value="#{filmBean.film.title}" />
+			</div>
+			<div class="mb-3">
+				<label for="exampleInputPassword1" class="form-label">Film
+					Description</label>
+				<h:inputTextarea styleClass="form-control"
+					value="#{filmBean.film.description}" ></h:inputTextarea>
+			</div>
+			<div class="mb-3">
+				<label for="exampleInputPassword1" class="form-label">Film
+					Release Year</label>
+				<h:inputText styleClass="form-control"
+					value="#{filmBean.film.releaseYear}" />
+			</div>
+			<div class="mb-3">
+				<label for="exampleInputPassword1" class="form-label">Film
+					Language ID</label>
+				<h:selectOneMenu value="#{filmBean.film.languageId}" styleClass="form-select" aria-label="Default select example">
+					<f:selectItems value="#{languageBean.read}" var="l" itemLabel="#{l.name}" itemValue="#{l.languageId}"/>
+				</h:selectOneMenu>
+			</div>
+			<div class="mb-3">
+				<label for="exampleInputPassword1" class="form-label">Film
+					Length</label>
+				<h:inputText styleClass="form-control"
+					value="#{filmBean.film.length}" />
+			</div>
+			<h:commandButton styleClass="btn btn-primary"
+				action="#{filmBean.create}" value="Create" />
+		</h:form>
+	</ui:define>
+</ui:composition>

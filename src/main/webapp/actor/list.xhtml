@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/admin.xhtml">
+
+	<ui:define name="content">
+		<h:form>
+			<h:commandButton styleClass="btn btn-outline-primary" action="create"
+				value="Create New Actor" />
+
+			<p:dataTable styleClass="table table-hover table-striped mt-3"
+				paginator="true" rows="15"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				value="#{actorBean.read}" var="c">
+				<p:column>
+					<f:facet name="header">ID</f:facet>
+					#{c.actorId}
+			</p:column>
+				<p:column>
+					<f:facet name="header">FIRST NAME</f:facet>
+					#{c.firstName}
+			</p:column>
+				<p:column>
+					<f:facet name="header">LAST NAME</f:facet>
+					#{c.lastName}
+			</p:column>
+				<p:column>
+					<f:facet name="header">LAST UPDATE</f:facet>
+					#{c.lastUpdate}
+			</p:column>
+				<p:column>
+					<f:facet name="header">ADMINISTRATION</f:facet>
+					<h:commandButton style="margin-right:5px"
+						styleClass="btn btn-warning" action="#{actorBean.updateForm(c)}"
+						value="update" />
+					<h:commandButton styleClass="btn btn-danger"
+						action="#{actorBean.delete(c)}" value="delete" />
+
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+
+
+
